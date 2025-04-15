@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC & XAU Intraday Trading Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BTC & XAU Intraday Trading Dashboard</h1>
+    </header>
+    <main>
+        <!-- BTC Section -->
+        <section id="btc-section" class="section">
+            <h2>BTC Signals</h2>
+            <div class="controls">
+                <label for="btc-timeframe">Timeframe:</label>
+                <select id="btc-timeframe">
+                    <option value="1">1 min</option>
+                    <option value="5" selected>5 min</option>
+                    <option value="15">15 min</option>
+                </select>
+            </div>
+            <div class="signal-box hold">Signal: Loading...</div>
+            <div class="chart-container">
+                <div class="tradingview-widget-container">
+                    <div id="tradingview_btc_chart"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                        new TradingView.widget({
+                            "width": "100%",
+                            "height": 300,
+                            "symbol": "BINANCE:BTCUSDT",
+                            "interval": "5",
+                            "timezone": "Asia/Kolkata",
+                            "theme": "dark",
+                            "style": "1",
+                            "locale": "en",
+                            "toolbar_bg": "#1a1a1a",
+                            "enable_publishing": false,
+                            "allow_symbol_change": true,
+                            "container_id": "tradingview_btc_chart"
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="tables-container">
+                <table class="signal-table" id="btc-signal-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Signal</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="5">Loading signals...</td></tr>
+                    </tbody>
+                </table>
+                <table class="tpsl-table" id="btc-tpsl-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Target</th>
+                            <th>Stoploss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="3">Loading TP/SL...</td></tr>
+                    </tbody>
+                </table>
+                <table class="pattern-table" id="btc-pattern-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Pattern</th>
+                            <th>Confidence</th>
+                            <th>Timeframe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="4">Loading patterns...</td></tr>
+                    </tbody>
+                </table>
+                <table class="sr-table" id="btc-sr-table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2">Loading levels...</td></tr>
+                    </tbody>
+                </table>
+                <table class="recent-patterns-table" id="btc-recent-patterns-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Pattern</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2">Loading recent patterns...</td></tr>
+                    </tbody>
+                </table>
+                <table class="recent-signals-table" id="btc-recent-signals-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Signal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2">Loading recent signals...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- XAU Section -->
+        <section id="xau-section" class="section">
+            <h2>XAU Signals</h2>
+            <div class="controls">
+                <label for="xau-timeframe">Timeframe:</label>
+                <select id="xau-timeframe">
+                    <option value="1">1 min</option>
+                    <option value="5" selected>5 min</option>
+                    <option value="15">15 min</option>
+                </select>
+            </div>
+            <div class="signal-box hold">Signal: Loading...</div>
+            <div class="chart-container">
+                <div class="tradingview-widget-container">
+                    <div id="tradingview_xau_chart"></div>
+                    <script type="text/javascript">
+                        new TradingView.widget({
+                            "width": "100%",
+                            "height": 300,
+                            "symbol": "XAUUSD",
+                            "interval": "5",
+                            "timezone": "Asia/Kolkata",
+                            "theme": "dark",
+                            "style": "1",
+                            "locale": "en",
+                            "toolbar_bg": "#1a1a1a",
+                            "enable_publishing": false,
+                            "allow_symbol_change": true,
+                            "container_id": "tradingview_xau_chart"
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="tables-container">
+                <table class="signal-table" id="xau-signal-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Signal</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="5">Loading signals...</td></tr>
+                    </tbody>
+                </table>
+                <table class="tpsl-table" id="xau-tpsl-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Target</th>
+                            <th>Stoploss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="3">Loading TP/SL...</td></tr>
+                    </tbody>
+                </table>
+                <table class="pattern-table" id="xau-pattern-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Pattern</th>
+                            <th>Confidence</th>
+                            <th>Timeframe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="4">Loading patterns...</td></tr>
+                    </tbody>
+                </table>
+                <table class="sr-table" id="xau-sr-table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2">Loading levels...</td></tr>
+                    </tbody>
+                </table>
+                <table class="recent-patterns-table" id="xau-recent-patterns-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Pattern</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2">Loading recent patterns...</td></tr>
+                    </tbody>
+                </table>
+                <table class="recent-signals-table" id="xau-recent-signals-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Signal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="2">Loading recent signals...</td></tr>
+                    </tbody>
+                </table>
+                <div id="xau-news-feed" class="news-feed">Loading XAU news...</div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
